@@ -1,0 +1,31 @@
+management:
+    endpoint:
+        health:
+            show-details: always
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+            
+security:
+    jwt:
+        token:
+            expire-length: 300000
+            secret-key: secret-key
+server:
+    port: 7001
+    servlet:
+        context-path: /petsapp2
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: rtt767401
+        url: jdbc:mysql://localhost:3306/spring100_db?serverTimezone=UTC
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        show-sql: true
